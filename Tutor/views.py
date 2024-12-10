@@ -20,8 +20,8 @@ def home(request):
     else:
         return render(request, 'login.html')
 
-def view_event(request, event_id):
-    event = get_object_or_404(Event, id=event_id)
+def view_event(request, id):
+    event = get_object_or_404(Event, id=id)
     return render(request, 'view_event.html', {'event': event})
 
 def about(request):
