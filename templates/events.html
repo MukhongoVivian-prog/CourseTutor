@@ -1,0 +1,124 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+{% block body %}
+<!-- Page Title -->
+<div class="page-title" data-aos="fade">
+    <div class="heading">
+        <div class="container">
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1>Events</h1>
+                    <p class="mb-0">
+                        Stay updated with our latest events and workshops. Join us to learn, network, and grow with industry experts and peers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li class="current">Events</li>
+            </ol>
+        </div>
+    </nav>
+</div><!-- End Page Title -->
+
+<!-- Events Section -->
+<section id="events" class="events section">
+
+    <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+            <!-- Event 1 -->
+            <div class="col-md-6 d-flex align-items-stretch">
+                <div class="card">
+                    <img src="{% static 'assets/img/events-item-1.jpg' %}" class="card-img-top" alt="Event Image">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#">Introduction to Web Design</a></h5>
+                        <p class="card-text">
+                            Discover the fundamentals of web design in this interactive workshop, perfect for beginners. Learn key principles to create visually appealing and functional websites.
+                        </p>
+                        <a href="{% url 'view_event' 1 %}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="col-md-6 d-flex align-items-stretch">
+                <div class="card">
+                    <img src="{% static 'assets/img/events-item-2.jpg' %}" class="card-img-top" alt="Event Image">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#">Marketing Strategies</a></h5>
+                        <p class="card-text">
+                            Join us to explore innovative marketing strategies that drive results. Gain insights into the latest trends and tools to optimize your campaigns.
+                        </p>
+                        <a href="{% url 'view_event' 2 %}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="col-md-6 d-flex align-items-stretch mt-4">
+                <div class="card">
+                    <img src="{% static 'assets/img/bootcamp.png' %}" class="card-img-top" alt="Event Image">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#">Data Analytics Bootcamp</a></h5>
+                        <p class="card-text">
+                            Dive into the world of data analytics in this hands-on bootcamp. Learn tools like Excel, SQL, and Tableau to analyze and visualize data effectively.
+                        </p>
+                        <a href="{% url 'view_event' 3 %}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 4 -->
+            <div class="col-md-6 d-flex align-items-stretch mt-4">
+                <div class="card">
+                    <img src="{% static 'assets/img/entreprenuership.png' %}" class="card-img-top" alt="Event Image">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#">Entrepreneurship Essentials</a></h5>
+                        <p class="card-text">
+                            Learn the basics of starting and running a successful business. This workshop covers everything from ideation to execution with expert advice.
+                        </p>
+                        <a href="{% url 'view_event' 4 %}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 5 -->
+            <div class="col-md-6 d-flex align-items-stretch mt-4">
+                <div class="card">
+                    <img src="{% static 'assets/img/cybersec.jpeg' %}" class="card-img-top" alt="Event Image">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#">Cybersecurity Workshop</a></h5>
+                        <p class="card-text">
+                            Explore best practices in cybersecurity to protect yourself and your organization. Learn from experts on topics like threat detection and secure protocols.
+                        </p>
+                        <a href="{% url 'view_event' 5 %}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 6 -->
+            <div class="col-md-6 d-flex align-items-stretch mt-4">
+                <div class="card">
+                    <img src="{% static 'assets/img/AI.jpeg' %}" class="card-img-top" alt="Event Image">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#">AI and Machine Learning Summit</a></h5>
+                        <p class="card-text">
+                            Discover the latest advancements in AI and machine learning at this summit. Network with researchers and industry leaders in the field.
+                        </p>
+                        <a href="{% url 'view_event' 6 %}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
