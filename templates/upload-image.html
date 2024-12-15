@@ -1,14 +1,33 @@
 {% extends 'starter-page.html' %}
 {% load static %}
 {% block body %}
-    <form method="post" enctype="multipart/form-data" class="text-center d-block m-auto mb-4">
-        {% csrf_token %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3>Upload Image</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
 
-         <h2>Upload Image</h2>
-        {{ form.as_p }}
-        <button type="submit">Upload</button>
-        <a href="{% url 'image' %}" class="btn btn-warning">Display images</a>
-    </form>
+                        <!-- Form Fields -->
+                        {{ form.as_p }}
 
-
+                        <!-- Submit Button -->
+                        <div class="d-flex justify-content-between mt-4">
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-upload"></i> Upload
+                            </button>
+                            <a href="{% url 'image' %}" class="btn btn-warning">
+                                <i class="bi bi-images"></i> View Images
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

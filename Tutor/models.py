@@ -17,7 +17,7 @@ class Checkout(models.Model):
     mpesa_number = models.CharField(max_length=20, default=1)
 
     def __str__(self):
-        return f"{self.name} - {self.course.title}"
+       return self.name
 
 
 

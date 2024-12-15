@@ -5,6 +5,7 @@ from django.urls import path
 from Tutor import views
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', views.home, name='home'),  # Home page (login)
     path('about/', views.about, name='about'),  # About page
     path('contact/', views.contact, name='contact'),  # Contact page
@@ -23,6 +24,12 @@ urlpatterns = [
     path('uploadimage/', views.upload_image, name='upload'),
     path('showimage/', views.show_image, name='image'),
     path('imagedelete/<int:id>', views.imagedelete),
-    path('view-event/<int:event_id>/', views.view_event, name='view_event'),
+    path('show/',views.show_events,name='show_events'),
+    path('plan/',views.plan,name='plan'),
+
+
+    path('pay/', views.pay, name='pay'),
+    path('stk/', views.stk, name='stk'),
+    path('token/', views.token, name='token'),
 
 ]
