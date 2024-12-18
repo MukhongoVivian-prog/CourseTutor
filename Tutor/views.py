@@ -9,7 +9,24 @@ from requests.auth import HTTPBasicAuth
 from Tutor.credentials import LipanaMpesaPpassword, MpesaAccessToken
 from Tutor.forms import CheckoutForm, ImageUploadForm
 from Tutor.models import Checkout, Member, Images
+from .models import Trainer
+from .forms import TrainerForm
 
+def trainers(request):
+    if request.method == "POST":
+        form = TrainerForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('trainers')  # Redirect after successful upload
+    else:
+        form = TrainerForm()
+
+    trainers = Trainer.objects.all()
+    context = {
+        'trainers': trainers,
+        'form': form,
+    }
+    return render(request, 'trainers.html', context)
 
 # Create your views here.
 def home(request):
@@ -41,8 +58,7 @@ def courses(request):
     return render(request,'courses.html')
 def pricing(request):
     return render(request,'pricing.html')
-def trainers(request):
-    return render(request,'trainers.html')
+
 def starter(request):
     return render(request,'starter-page.html')
 def checkout(request):

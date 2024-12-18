@@ -42,3 +42,12 @@ class Images(models.Model):
     title = models.CharField(max_length=50)
     price = models.CharField(max_length=50)
 
+class Trainer(models.Model):
+    name = models.CharField(max_length=100)
+    specialization = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.ImageField(upload_to='images /')
+
+    def __str__(self):
+        return self.name
+
