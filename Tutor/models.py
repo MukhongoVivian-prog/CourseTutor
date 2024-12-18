@@ -37,17 +37,8 @@ class  Member(models.Model):
     def __str__(self):
         return self.name
 
-class ImageModel(models.Model):
+class Images(models.Model):
     image = models.ImageField(upload_to='images/')
     title = models.CharField(max_length=50)
     price = models.CharField(max_length=50)
 
-class Event(models.Model):
-    name = models.CharField(max_length=200)
-    description = models.TextField()
-    date = models.DateField()
-    time = models.TimeField()
-    location = models.CharField(max_length=255)
-
-    def __str__(self):
-        return self.name

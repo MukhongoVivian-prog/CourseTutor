@@ -1,13 +1,14 @@
 import json
 
 import requests
+from django.contrib.auth.decorators import user_passes_test, login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from requests.auth import HTTPBasicAuth
 
 from Tutor.credentials import LipanaMpesaPpassword, MpesaAccessToken
 from Tutor.forms import CheckoutForm, ImageUploadForm
-from Tutor.models import Checkout, Member, ImageModel, Course,Event
+from Tutor.models import Checkout, Member, Images
 
 
 # Create your views here.
@@ -27,10 +28,6 @@ def home(request):
     else:
         return render(request, 'login.html')
 
-def show_events(request):
-    events = Event.objects.all()  # Retrieve all events
-    return render(request, 'view_event.html', {'events': events})
-
 
 def about(request):
     return render(request,'about.html')
@@ -42,8 +39,6 @@ def details(request):
     return render(request,'course-details.html')
 def courses(request):
     return render(request,'courses.html')
-def events(request):
-    return render(request,'events.html')
 def pricing(request):
     return render(request,'pricing.html')
 def trainers(request):
@@ -111,7 +106,7 @@ def upload_image(request):
     return render(request, 'upload-image.html', {'form': form})
 
 def show_image(request):
-    images = ImageModel.objects.all()
+    images = Images.objects.all()
     return render(request, 'show-image.html', {'images': images})
 
 def pay(request):
@@ -119,7 +114,7 @@ def pay(request):
 
 
 def imagedelete(request, id):
-    image = ImageModel.objects.get(id=id)
+    image = Images.objects.get(id=id)
     image.delete()
     return redirect('/showimage')
 def token(request):
@@ -161,3 +156,4 @@ def stk(request):
         }
         response = requests.post(api_url, json=request, headers=headers)
         return HttpResponse("Your Payment has been successfully made!")
+

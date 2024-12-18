@@ -11,8 +11,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),  # Contact page
     path('details/', views.details, name='details'),  # Course details page
     path('courses/', views.courses, name='courses'),  # Courses page
-    path('events/', views.events, name='events'),  # Events page
-    path('trainers/', views.trainers, name='trainers'),  # Trainers page
+     path('trainers/', views.trainers, name='trainers'),  # Trainers page
     path('starter/', views.starter, name='starter'),  # Starter page
     path('checkout/', views.checkout, name='checkout'),  # Checkout page
     path('display/', views.view, name='display'),  # Display all checkouts
@@ -24,7 +23,6 @@ urlpatterns = [
     path('uploadimage/', views.upload_image, name='upload'),
     path('showimage/', views.show_image, name='image'),
     path('imagedelete/<int:id>', views.imagedelete),
-    path('show/',views.show_events,name='show_events'),
     path('plan/',views.plan,name='plan'),
 
 

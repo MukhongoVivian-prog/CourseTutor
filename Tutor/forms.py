@@ -1,5 +1,5 @@
 from django import forms
-from .models import Checkout, ImageModel
+from .models import Checkout, Images
 
 
 class CheckoutForm(forms.ModelForm):
@@ -14,5 +14,5 @@ class CheckoutForm(forms.ModelForm):
 
 class ImageUploadForm(forms.ModelForm):
     class Meta:
-        model = ImageModel
+        model = Images
         fields = ['image','title','price']
